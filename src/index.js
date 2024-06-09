@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Homepage from './views/home/index';
+import {Preloader } from './components/child.components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Preloader />
+      <Routes>
+        <Route path="/home" element={<Homepage />} />
+        {/* Add more routes here */}
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
